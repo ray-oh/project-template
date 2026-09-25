@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------
+# Python build artifacts
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ---------------------------------------------------------------
+# Virtual environment
+# Virtual environments are now stored in AppData — but keep these
+# entries in case of local development outside the standard setup.
+# ---------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------
+# Portable Python interpreter
+# Unpacked at runtime into AppData\Local\<MyOrg>\python\
+# Do not commit — distribute the zip separately.
+# ---------------------------------------------------------------
+/python/
+
+# ---------------------------------------------------------------
+# Python zip (large binary — keep out of version control)
+# ---------------------------------------------------------------
+*.zip
+
+# ---------------------------------------------------------------
+# Playwright
+# ---------------------------------------------------------------
+.playwright_installed
+
+# ---------------------------------------------------------------
+# IDE and editor files
+# ---------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ---------------------------------------------------------------
+# OS generated files
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ---------------------------------------------------------------
+# Logs and local data
+# ---------------------------------------------------------------
+*.log
+*.lock
+
+# ---------------------------------------------------------------
+# Environment files
+# .env.default  — committed config (APP_NAME, APP_AUTHOR etc.)
+# .env          — generated at runtime, never commit
+# ---------------------------------------------------------------
+.env
+.env.local
+scripts/.env
+!scripts/.env.default
+.shell_init.bat
+
+# ---------------------------------------------------------------
+# Generated shell init script (created by virtualenv.bat at runtime)
+# ---------------------------------------------------------------
+scripts/.shell_init.bat

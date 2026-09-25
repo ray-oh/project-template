@@ -1,0 +1,59 @@
+# ===========================================================================
+# pyproject.toml — Project metadata and build configuration
+#
+# This file serves three purposes:
+#   1. Tells pip HOW to build/install this project (build-system)
+#   2. Declares WHAT this project is and what it needs (project)
+#   3. Configures HOW setuptools finds the package code (tool.setuptools)
+#
+# Usage:
+#   pip install -e .    ← editable install (recommended during development)
+#   pip install .       ← regular install  (for deployment)
+#
+# Adapt this file when starting a new project:
+#   - Set name, version, description
+#   - Set requires-python to your minimum version
+#   - Add your dependencies under [project] dependencies
+#   - Update [tool.setuptools.packages.find] include list
+# ===========================================================================
+
+[build-system]
+requires      = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# ---------------------------------------------------------------------------
+# [project] — Core metadata. Update name, version, description, dependencies.
+# ---------------------------------------------------------------------------
+[project]
+name            = "my-package"
+version         = "1.0.0"
+description     = "Short description of what this project does"
+requires-python = ">=3.12"
+
+dependencies = [
+    "platformdirs>=4.0.0",
+    "jupyter>=1.1.1",
+    "markdown",
+    "weasyprint",
+    # requests>=2.31.0,
+    # playwright>=1.44.0,
+]
+
+# ---------------------------------------------------------------------------
+# [project.scripts]
+# Creates a CLI shortcut inside the venv's Scripts/ folder after install.
+# Format: "command-name" = "dotted.module.path:function_name"
+# After install, you can run `my-package` instead of `python -m my_package`
+# ---------------------------------------------------------------------------
+[project.scripts]
+"my-package" = "my_package.__main__:main"
+
+# ---------------------------------------------------------------------------
+# [tool.setuptools.packages.find]
+# Tells setuptools where to look for packages (src layout).
+# include: add each top-level package name you define.
+# A folder is only a package if it contains __init__.py.
+# ---------------------------------------------------------------------------
+[tool.setuptools.packages.find]
+where   = ["src"]
+include = ["my_package*"]
